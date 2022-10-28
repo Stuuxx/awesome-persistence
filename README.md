@@ -32,7 +32,7 @@ use exploit/windows/local/persistence_service
 set SESSION 1
 exploit
 ```
-(persistence-service.jpg)
+(/Images/persistence-service.jpg)
 
 - Abrir uma nova aba no terminal;
 - Utilizar o multi/handler, configurar-lo e colocar para ouvir;
