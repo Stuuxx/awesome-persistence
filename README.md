@@ -1,5 +1,8 @@
 # [Awesome Windows Persistence](https://github.com/Stuuxx/awesome-persistence)
 
+![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198657369-c6fcfa22-36e4-4804-a60d-d7e5ae262f0e.gif)
+
+
 **Técnicas e táticas para manutenção de persistência em um alvo explorado.**
 Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para alvos Windows!
 
