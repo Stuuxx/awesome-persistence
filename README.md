@@ -18,7 +18,7 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
  - SharPersist
 
 ### Persistence Service
-
+----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
 - Colocar a sessão em background;
 - Utilizar e configurar o módulo exploit/windows/local/persistence_service do metasploit;
