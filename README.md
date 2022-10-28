@@ -1,7 +1,6 @@
 # [Awesome Windows Persistence](https://github.com/Stuuxx/awesome-persistence)
 
-![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198657369-c6fcfa22-36e4-4804-a60d-d7e5ae262f0e.gif)
-
+![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198659100-fbdb0b32-38b0-4ff6-a5ab-7ae305cf51cc.gif)
 
 **Técnicas e táticas para manutenção de persistência em um alvo explorado.**
 Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para alvos Windows!
@@ -17,7 +16,7 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
  - Wmi-Persistence
  - SharPersist
 
-## Persistence Service
+### Persistence Service
 
 Já com o alvo explorado e com uma shell meterpreter:
 - Colocar a sessão em background;
@@ -48,10 +47,10 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 ![persistence-service3](https://user-images.githubusercontent.com/67444297/198635260-54025d20-366e-4e76-a31e-1731e7da1702.jpg)
 
 
-## Persistence Registry
+### Persistence Registry
 
 
-## Netcat
+### Netcat
 
 Já com o alvo explorado e com uma shell meterpreter:
 - Vamos realizar o upload do netcat para algum diretório do alvo.
@@ -68,17 +67,17 @@ nc2.jpg
 
 
 
-## RDP
+### RDP
 
 Já com o alvo explorado e com uma shell meterpreter:
 
 
-## Schtasks
+### Schtasks
 
 Já com o alvo explorado e com uma shell meterpreter:
 
 
-## Schtasks - Log Events
+### Schtasks - Log Events
 
 Já com o alvo explorado e com uma shell meterpreter:
 
