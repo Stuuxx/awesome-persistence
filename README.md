@@ -49,10 +49,10 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 
 ### Persistence Registry
-
+----------------------------------------------------------------------------------
 
 ### Netcat
-
+----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
 - Vamos realizar o upload do netcat para algum diretório do alvo.
 ```bash
@@ -68,21 +68,43 @@ nc2.jpg
 
 
 
-### RDP
 
+
+
+
+### RDP
+----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
 
 
 ### Schtasks
-
+----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
 
 
 ### Schtasks - Log Events
-
+----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
 
 
+### WMIC
+----------------------------------------------------------------------------------
+Já com o alvo explorado e com uma shell meterpreter:
+
+
+### Wmi-Persistence
+----------------------------------------------------------------------------------
+Já com o alvo explorado e com uma shell meterpreter:
+
+
+### SharPersist
+----------------------------------------------------------------------------------
+Já com o alvo explorado e com uma shell meterpreter:
+
+
+
+
+----------------------------------------------------------------------------------
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através de minhas redes sociais!
  - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
