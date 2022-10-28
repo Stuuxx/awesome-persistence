@@ -1,7 +1,7 @@
 # [Awesome Windows Persistence](https://github.com/Stuuxx/awesome-persistence)
 
 **Técnicas e táticas para manutenção de persistência em um alvo explorado.**
-Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas tanto para Windows quanto para Linux!
+Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para alvos Windows!
 
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
