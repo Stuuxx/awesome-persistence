@@ -6,15 +6,15 @@ Estarei constantemente atualizando este repositório com novas técnicas!
 
 ## Sumário
 *[Técnicas e Táticas](#tecnicas)
-     *[Persistence Service](#persistence-service)
-     *[Persistence Registry](#persistence-registry)
-     *[Netcat](#persistence-netcat)
-     *[RDP](#persistence-rdp)
-     *[Schtasks](#schtasks)
-     *[Schtasks-Log Events](#schtasks-log-events)
-     *[WMIC](#persistence-wmic)
-     *[Wmi-Persistence](#persistence-wmi)
-     *[SharPersist](#sharpersist)
+-     *[Persistence Service](#persistence-service)
+-     *[Persistence Registry](#persistence-registry)
+-     *[Netcat](#persistence-netcat)
+-     *[RDP](#persistence-rdp)
+-     *[Schtasks](#schtasks)
+-     *[Schtasks-Log Events](#schtasks-log-events)
+-     *[WMIC](#persistence-wmic)
+-     *[Wmi-Persistence](#persistence-wmi)
+-     *[SharPersist](#sharpersist)
 
 ## Técnicas e Táticas
 ###Persistence Service
