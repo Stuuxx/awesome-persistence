@@ -16,7 +16,7 @@ Técnicas e Táticas
  - Wmi-Persistence
  - SharPersist
 
-##Persistence Service
+## Persistence Service
 
 Já com o alvo explorado e com uma shell meterpreter:
 - Colocar a sessão em background;
@@ -55,19 +55,19 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 ![persistence-service3](https://user-images.githubusercontent.com/67444297/198635260-54025d20-366e-4e76-a31e-1731e7da1702.jpg)
 
 
-##Persistence Registry
+## Persistence Registry
 
 
-##Netcat
+## Netcat
 
 
-##RDP
+## RDP
 
 
-##Schtasks
+## Schtasks
 
 
-##Schtasks - Log Events
+## Schtasks - Log Events
 
 
 ## Ficou com alguma dúvida?
