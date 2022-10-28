@@ -3,6 +3,7 @@
 ![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198659100-fbdb0b32-38b0-4ff6-a5ab-7ae305cf51cc.gif)
 
 **Técnicas e táticas para manutenção de persistência em um alvo explorado.**
+
 Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para alvos Windows!
 
 ## Sumário
