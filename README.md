@@ -16,8 +16,6 @@ Técnicas e Táticas
  - Wmi-Persistence
  - SharPersist
 
-## Técnicas e Táticas
-
 ##Persistence Service
 
 Já com o alvo explorado e com uma shell meterpreter:
