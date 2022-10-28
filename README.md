@@ -1,4 +1,4 @@
-# [Awesome Windows Persistence](https://github.com/Stuuxx/awesome-persistence)
+# Awesome Windows Persistence
 
 ![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198659100-fbdb0b32-38b0-4ff6-a5ab-7ae305cf51cc.gif)
 
