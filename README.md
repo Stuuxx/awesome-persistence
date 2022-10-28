@@ -6,7 +6,7 @@ Estarei constantemente atualizando este repositório com novas técnicas!
 
 ## Sumário
 Técnicas e Táticas
- - Persistence Service
+ - Persistence Service(#persistence-service)
  - Persistence Registry
  - Netcat
  - RDP
@@ -71,9 +71,8 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 
 ## Ficou com alguma dúvida?
-
 Siga-me nas redes sociais para acompanhar meus conteúdos relacionados a Cyber Security e Offensive Hacking ou para tirar dúvidas relacionadas aos artigos!
- - LinkedIn : [Eduardo Maragno](https://www.facebook.com/HackwithGithub)
+ - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
  - Bugcrowd : [@Stux](https://bugcrowd.com/StuxRs)
- - Medium : [@Stux]()
+ - Medium : [@Stux](https://medium.com/@stux)
  - Twitter : [@StuxRs](https://twitter.com/StuxRs)
