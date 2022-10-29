@@ -8,14 +8,14 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
- - Persistence Registry
- - Netcat
- - RDP
- - Schtasks
- - Schtasks-Log Events
- - WMIC
- - Wmi-Persistence
- - SharPersist
+ - [Persistence Registry](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#persistence-registry)
+ - [Netcat](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#netcat)
+ - [RDP](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#rdp)
+ - [Schtasks](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#schtasks)
+ - [Schtasks-Log Events](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#schtasks-log-events)
+ - [WMIC](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmic)
+ - [Wmi-Persistence](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmi-persistence)
+ - [SharPersist](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#sharpersist)
 
 ### Persistence Service
 ----------------------------------------------------------------------------------
