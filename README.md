@@ -21,7 +21,6 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 
 
 ## Persistence Service
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -59,14 +58,12 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 
 ## Persistence Registry
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
 Etapas:
 
 ## Netcat
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -103,7 +100,6 @@ nc IP PORTA
 
 
 ## RDP
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview: 
 
@@ -112,7 +108,6 @@ Etapas:
 
 
 ## Schtasks
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -152,7 +147,6 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 
 ## Schtasks - Log Events
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -192,7 +186,6 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 
 ## WMIC
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -200,7 +193,6 @@ Etapas:
 
 
 ## Wmi-Persistence
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 O script WMI-Persistence serve para criar assinaturas de eventos WMI maliciosas, através do upload desse script powershell para a máquina explorada, iremos realizar o processo de persistência.
@@ -252,18 +244,15 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 
 
 ## SharPersist
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
 Etapas:
 
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através de minhas redes sociais!
  - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
  - Bugcrowd : [@Stux](https://bugcrowd.com/StuxRs)
  - Medium : [@Stux](https://medium.com/@stux)
  - Twitter : [@StuxRs](https://twitter.com/StuxRs)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
