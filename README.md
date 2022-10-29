@@ -2,11 +2,11 @@
 
 ![829c15633cef94444c681910dfedd23b](https://user-images.githubusercontent.com/67444297/198659100-fbdb0b32-38b0-4ff6-a5ab-7ae305cf51cc.gif)
 
-**Técnicas e táticas para manutenção de persistência em um alvo explorado.**
+**Técnicas e táticas para manutenção de persistência em um alvo windows explorado.**
 
-Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas para Windows Persistence!
+Eu sou o Stux e estarei constantemente atualizando este repositório com novas técnicas!
 
-**Obs: Todos os processos de persistência partem do princípio de que você já possui uma shell ou acesso ao ambiente**
+**Obs: Todos os processos de persistência deste repositório partem do princípio de que você já possua uma shell ou acesso ao ambiente e que já tenha realizado o processo de escalação de privilégios.**
 
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
@@ -180,6 +180,7 @@ exploit
 ![Screenshot_2](https://user-images.githubusercontent.com/67444297/198754914-cfa45c52-0dea-41f2-a8cf-a60855680d89.jpg)
 
 Para prova de conceito, iremos dar um reboot na máquina explorada para que nosso ataque seja efetivado e a task seja executada.
+
 ![Screenshot_4](https://user-images.githubusercontent.com/67444297/198754918-e532b2a5-337c-48b7-a08c-7c61862dac6c.jpg)
 
 - Após o reboot, receberemos nossa shell.
@@ -298,6 +299,7 @@ exploit
 ![Screenshot_7](https://user-images.githubusercontent.com/67444297/198842750-dd90ada1-247f-492d-9321-50252a435058.jpg)
 
 Para prova de conceito, iremos dar um reboot na máquina explorada para recebermos nossa shell.
+
 ![Screenshot_8](https://user-images.githubusercontent.com/67444297/198842752-cf12ffe2-1d88-45d6-a38b-0c4c04c701ce.jpg)
 
 - Logo após o reboot, receberemos nossa shell no multi/handler.
