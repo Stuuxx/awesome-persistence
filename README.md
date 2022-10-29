@@ -348,6 +348,11 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 
 ![Screenshot_6](https://user-images.githubusercontent.com/67444297/198844780-e2b39e76-1f5c-4957-9ae2-bf44a1b0e8bc.jpg)
 
+## Roadmap
+ - Persistence Registry
+ - RDP
+ - ...
+
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através de minhas redes sociais!
  - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
