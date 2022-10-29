@@ -14,9 +14,9 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
  - [Netcat](https://github.com/Stuuxx/awesome-persistence#netcat)
  - [Schtasks](https://github.com/Stuuxx/awesome-persistence#schtasks)
  - [Schtasks-Log Events](https://github.com/Stuuxx/awesome-persistence#schtasks---log-events)
- - [WMIC]()
- - [Wmi-Persistence](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmi-persistence)
- - [SharPersist](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#sharpersist)
+ - [WMIC](https://github.com/Stuuxx/awesome-persistence#wmic)
+ - [Wmi-Persistence](https://github.com/Stuuxx/awesome-persistence#wmi-persistence)
+ - [SharPersist](https://github.com/Stuuxx/awesome-persistence#sharpersist)
 
 
 ## Persistence Service
@@ -57,15 +57,9 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 
 
-
-
 ## Persistence Registry
 
-Introdução:
-
-Etapas:
-
-
+-- Em construção -- 
 
 
 
