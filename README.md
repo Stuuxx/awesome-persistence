@@ -98,9 +98,8 @@ nc IP PORTA
 
 Overview: 
 
+
 Etapas:
-- 
--
 
 
 ### Schtasks
@@ -141,6 +140,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 ![Screenshot_4](https://user-images.githubusercontent.com/67444297/198754918-e532b2a5-337c-48b7-a08c-7c61862dac6c.jpg)
 
 - Após o reboot, receberemos nossa shell.
+
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198754920-67ffe450-596a-4dfc-8736-8e5eed3ca16e.jpg)
 
 ### WMIC
