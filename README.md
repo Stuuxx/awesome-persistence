@@ -10,17 +10,17 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 
 ## Sumário
  - [Persistence Service](https://github.com/Stuuxx/awesome-persistence#persistence-service)
- - [Persistence Registry](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#persistence-registry)
- - [Netcat](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#netcat)
- - [RDP](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#rdp)
- - [Schtasks](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#schtasks)
- - [Schtasks-Log Events](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#schtasks-log-events)
- - [WMIC](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmic)
+ - [Persistence Registry](https://github.com/Stuuxx/awesome-persistence#persistence-registry)
+ - [Netcat](https://github.com/Stuuxx/awesome-persistence#netcat)
+ - [RDP](https://github.com/Stuuxx/awesome-persistence#rdp)
+ - [Schtasks](https://github.com/Stuuxx/awesome-persistence#schtasks)
+ - [Schtasks-Log Events](https://github.com/Stuuxx/awesome-persistence#schtasks---log-events)
+ - [WMIC]()
  - [Wmi-Persistence](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#wmi-persistence)
  - [SharPersist](https://github.com/Stuuxx/awesome-persistence/blob/main/README.md#sharpersist)
 
 ### Persistence Service
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 Essa técnica tem como objetivo criar um serviço persistente no windows explorado na qual executará diversas vezes o payload de conexão reversa.
@@ -57,10 +57,10 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 
 
 ### Persistence Registry
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Netcat
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
 
@@ -84,6 +84,7 @@ reg queryval -k HKLM\\software\\microsoft\\windows\\currentversion\\run -v nc
 ![nc3](https://user-images.githubusercontent.com/67444297/198689313-1abd224e-cd03-4853-9958-65540a2cdb16.jpg)
 
 Para prova de conceito, iremos dar um reboot na máquina explorada para que nosso ataque seja efetivado nos registros do sistema.
+
 ![nc4](https://user-images.githubusercontent.com/67444297/198689314-683654df-041d-453d-bec6-be6f419130ec.jpg)
 
 - Após o ataque ser bem sucedido, vamos nos conectar na máquina explorada através do netcat.
@@ -94,7 +95,7 @@ nc IP PORTA
 
 
 ### RDP
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview: 
 
@@ -103,12 +104,14 @@ Etapas:
 
 
 ### Schtasks
-----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Overview:
+
+Etapas:
 
 
 ### Schtasks - Log Events
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Overview:
 
 Etapas:
@@ -144,26 +147,31 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198754920-67ffe450-596a-4dfc-8736-8e5eed3ca16e.jpg)
 
 ### WMIC
-----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Overview:
+
+Etapas:
 
 
 ### Wmi-Persistence
-----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Overview:
+
+Etapas:
 
 
 ### SharPersist
-----------------------------------------------------------------------------------
-Já com o alvo explorado e com uma shell meterpreter:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Overview:
+
+Etapas:
 
 
-
-
-----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através de minhas redes sociais!
  - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
  - Bugcrowd : [@Stux](https://bugcrowd.com/StuxRs)
  - Medium : [@Stux](https://medium.com/@stux)
  - Twitter : [@StuxRs](https://twitter.com/StuxRs)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
