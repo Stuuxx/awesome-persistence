@@ -309,6 +309,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 Introdução:
 
 SharPersist é um kit de ferramentas de persistência do Windows escrito em C#. Suporta toneladas de técnicas diferentes para manutenção de persistência.
+Para realizar o download do SharPersist [clique aqui.](https://github.com/mandiant/SharPersist/releases/tag/v1.0.1)
 
 Etapas:
 - Vamos iniciar criando um backdoor através do msfvenom.
