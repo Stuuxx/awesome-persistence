@@ -63,6 +63,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Overview:
+Nessa técnica, iremos realizar o upload do netcat para o alvo e iremos modificar um registro para que o alvo execute ele, nos abrindo uma porta para conectar posteriormente quando necessário.
 
 Etapas:
 - Vamos realizar o upload do netcat para algum diretório do alvo.
@@ -105,6 +106,7 @@ Etapas:
 
 ### Schtasks
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Overview:
 
 Etapas:
@@ -112,7 +114,10 @@ Etapas:
 
 ### Schtasks - Log Events
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Overview:
+
+Nesse caso, estamos criando uma tarefa que pode ser acionada em um log de segurança específico do Windows event. Ou seja, ID do event: 4634 (4634: event desconectado de uma conta). Quando um usuário faz logoff, então este event é gerado. Portanto, a tarefa agendada é executada assim que o usuário fizer login novamente.
 
 Etapas:
 - Vamos iniciar criando um backdoor via msfvenom.
@@ -148,6 +153,7 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 
 ### WMIC
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Overview:
 
 Etapas:
@@ -155,6 +161,7 @@ Etapas:
 
 ### Wmi-Persistence
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Overview:
 
 Etapas:
@@ -162,6 +169,7 @@ Etapas:
 
 ### SharPersist
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Overview:
 
 Etapas:
