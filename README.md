@@ -57,11 +57,18 @@ Para prova de conceito, iremos dar um reboot na máquina explorada e aguardar a 
 ![persistence-service3](https://user-images.githubusercontent.com/67444297/198635260-54025d20-366e-4e76-a31e-1731e7da1702.jpg)
 
 
+
+
+
 ## Persistence Registry
 
 Overview:
 
 Etapas:
+
+
+
+
 
 ## Netcat
 
@@ -99,12 +106,18 @@ nc IP PORTA
 ![nc5](https://user-images.githubusercontent.com/67444297/198689315-99ce1fe9-5608-4374-b861-b48f09492a57.jpg)
 
 
+
+
+
 ## RDP
 
 Overview: 
 
 
 Etapas:
+
+
+
 
 
 ## Schtasks
@@ -146,6 +159,9 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198840168-3b5f04a7-1f47-464d-bfd8-96d8c22f2aa8.png)
 
 
+
+
+
 ## Schtasks - Log Events
 
 Overview:
@@ -185,11 +201,17 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para que noss
 ![Screenshot_5](https://user-images.githubusercontent.com/67444297/198754920-67ffe450-596a-4dfc-8736-8e5eed3ca16e.jpg)
 
 
+
+
+
 ## WMIC
 
 Overview:
 
 Etapas:
+
+
+
 
 
 ## Wmi-Persistence
@@ -243,11 +265,17 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 ![Screenshot_9](https://user-images.githubusercontent.com/67444297/198842754-83093da4-0d80-4a32-8e86-0e8cb2956a0f.jpg)
 
 
+
+
+
 ## SharPersist
 
 Overview:
 
 Etapas:
+
+
+
 
 
 ## Ficou com alguma dúvida?
