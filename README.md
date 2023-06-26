@@ -355,7 +355,6 @@ Para prova de conceito, iremos dar um reboot na máquina explorada para receberm
 
 ## Ficou com alguma dúvida?
 Sinta-se a vontade para entrar em contato comigo através das minhas redes sociais!
- - LinkedIn : [Eduardo Maragno](https://www.linkedin.com/in/eduardo-maragno/)
  - Bugcrowd : [@Stux](https://bugcrowd.com/StuxRs)
  - Medium : [@Stux](https://medium.com/@stux)
  - Twitter : [@StuxRs](https://twitter.com/StuxRs)
